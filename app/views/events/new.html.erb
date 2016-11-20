@@ -1,0 +1,14 @@
+<h1>Create an event</h1>
+
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.input :title %>
+  <%= f.select :category, options_for_select([["Football"], ["Rugby"], ["Tennis"], ["Basketball"], ["Golf"], ["Formula 1"], ["Surf"]]) %>
+  <%= f.input :address %>
+  <%=  f.input :datetime %>
+  <%= f.input :description %>
+
+  <%= f.button :submit %>
+<% end %>
