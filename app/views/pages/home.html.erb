@@ -1,2 +1,49 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="landing-main">
+  <div id="landing-navbar-container">
+    <%= link_to root_path do %>
+      <div id="landing-navbar-left">
+        <div class="landing-navbar-item" id="logo-potato">
+            <%= image_tag 'potato-icon.png' %>
+        </div>
+        <h4>CouchSportato</h4>
+      </div>
+    <% end %>
+  </div>
+  <div id="landing-presentation">
+    <h1>Experience the best of sport<br><span>with your friends</span></h1>
+  </div>
+  <div id="landing-signup">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1"><h2><strong>Sign up</strong></h2></div>
+    </div><br>
+    <div class="row">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+        <div class="col-md-10 col-md-offset-1 form-group">
+          <%= f.input :first_name, label: false, placeholder: "First name", required: true, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class="col-md-10 col-md-offset-1 form-group">
+          <%= f.input :last_name, label: false, placeholder: "Last name", required: true, class: 'form-control' %>
+        </div>
+        <div class="col-md-10 col-md-offset-1 form-group">
+          <%= f.input :email, label: false, placeholder: "Email address", required: true, class: 'form-control' %>
+        </div>
+        <div class="col-md-10 col-md-offset-1 form-group">
+          <%= f.input :password, label: false, placeholder: "Password", required: true, class: 'form-control', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        </div>
+        <div class="col-md-10 col-md-offset-1 form-group">
+          <%= f.input :password_confirmation, label: false, placeholder: "Confirm password", required: true, class: 'form-control' %>
+        </div>
+        <div class="col-md-5 col-md-offset-4">
+          <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
+        </div>
+        <div class="col-md-8 col-md-offset-1">
+<!--           <%= render "devise/shared/links" %> -->
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div id="landing-footer"></div>
+
+
